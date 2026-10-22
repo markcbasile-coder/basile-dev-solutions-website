@@ -1,6 +1,6 @@
 :root {
     /* ==========================================================================
-     GLOBAL PAGE & BODY STYLES
+     GLOBAL PAGE & BODY STYLES VARIABLES
      Target elements: body, main, html
      ========================================================================== */
     --bg-page: #0f172a;
@@ -13,7 +13,7 @@
     /* Borders for fieldsets, card dividers, header bottom */
 
     /* ==========================================================================
-     HEADER & NAVIGATION
+     HEADER & NAVIGATION VARIABLES
      Target elements: header, nav, #nav, .navigation, .nav-links
      ========================================================================== */
     --nav-bg: #1e293bE6;
@@ -24,7 +24,7 @@
     /* Hover color for nav bar anchor links */
 
     /* ==========================================================================
-     HERO SECTION
+     HERO SECTION VARIABLES
      Target elements: section.hero, #hero, #hero-text, #hero-image
      ========================================================================== */
     --hero-bg: #1e293b80;
@@ -33,7 +33,7 @@
     /* Accent color for main h1 heading */
 
     /* ==========================================================================
-     PRICING CARDS & FEATURE GRID
+     PRICING CARDS & FEATURE GRID VARIABLES
      Target elements: .price-cards, .plan-card-container, .feature-grid, 
                       #feature-items, .checklist, #starter, #growth, #bus-pro
      ========================================================================== */
@@ -61,7 +61,7 @@
     /* Muted gray dashes/crosses for .not-included list items */
 
     /* ==========================================================================
-     SIGN-UP FORM & INPUTS
+     SIGN-UP FORM & INPUTS VARIABLES
      Target elements: form#sign-up, fieldset, legend, input, label
      ========================================================================== */
     --form-bg: #1e293b;
@@ -80,7 +80,7 @@
     /* Border color when input is active/focused */
 
     /* ==========================================================================
-     BUTTONS & CALLS TO ACTION
+     BUTTONS & CALLS TO ACTION VARIABLES
      Target elements: .cta-btn, .btn, button, form submit button
      ========================================================================== */
     --btn-bg: #2563eb;
@@ -99,7 +99,7 @@
     /* Brightened border highlight on hover */
 
     /* ==========================================================================
-     FOOTER
+     FOOTER VARIABLES
      Target elements: footer, .footer-content
      ========================================================================== */
     --footer-bg: #0f172a;
@@ -108,7 +108,9 @@
     /* Copyright and description text color */
 }
 
-/* Enhanced Reset - Prevents layout overflow */
+ /* ==========================================================================
+     RESETS
+     ========================================================================== */
 *,
 ::before,
 ::after {
@@ -125,13 +127,23 @@ html {
     
 }
 
+
+ /* ==========================================================================
+     GENERIC STYLING
+     ========================================================================== */
 body {
-    padding-top: 10vh;
     background-color: var(--bg-page);
     min-height: 100vh;
     overflow: hide;
 }
 
+main {
+    margin-top: 65px;
+}
+
+ /* ==========================================================================
+     HEADER AND NAVIGATION
+     ========================================================================== */
 header {
     position: fixed;
     top: 0;
@@ -164,12 +176,12 @@ border: 2px solid Var(--border-color);
 }
 
 /*Navigation -  Hidden Nav*/
-/* 1. Hide the actual checkbox input completely */
+/*Hide the actual checkbox input completely */
 .nav-toggle {
     display: none;
 }
 
-/* 2. Style the Hamburger Icon Button */
+/*Style the Hamburger Icon Button */
 .hamburger-btn {
     pointer-events: auto;
     display: flex;
@@ -182,7 +194,7 @@ border: 2px solid Var(--border-color);
     position: relative;
 }
 
-/* The 3 visible lines */
+/*The 3 visible lines */
 .hamburger-btn span {
     display: block;
     width: 100%;
@@ -192,7 +204,7 @@ border: 2px solid Var(--border-color);
     transition: all 0.3s ease;
 }
 
-/* 3. Off-Canvas Mobile Navigation Setup */
+/*Off-Canvas Mobile Navigation Setup */
 nav.navigation {
     position: fixed;
     top: 0;
@@ -214,7 +226,7 @@ nav.navigation {
     overflow-y: auto;
 }
 
-/* Link visibility & styling inside the drawer */
+/*Link visibility & styling inside the drawer */
 nav.navigation ul {
     list-style: none;
     padding: 0;
@@ -241,7 +253,7 @@ nav.navigation a {
     transition: opacity 0.2s;
 }
 
-/* Slide active drawer in - Open State */
+/*Slide active drawer in - Open State */
 .nav-toggle:checked~nav.navigation {
     left: 0;
 }
@@ -253,17 +265,18 @@ nav.navigation ul li a:hover {
 nav.navigation a:hover {
     opacity: 0.8;
 }
-/*End Nav Bar*/
 
 
-/*list styling*/
+ /* ==========================================================================
+     LIST STYLING
+     ========================================================================== */
 ul {
     list-style: none;
 }
 
-/* =============================
-Hero Section
-================================ */
+ /* ==========================================================================
+     HERO SECTION
+     ========================================================================== */
 .hero {
     display: flex;
     justify-content: space-evenly;
@@ -275,13 +288,16 @@ Hero Section
 img {
     width: 40%;
     max-width: 500px;
-    margin: 2px auto;
+    margin: 2px 10px 0 auto;
     z-index: -1;
+
 }
 
 
 
-/*Plan Cards*/
+ /* ==========================================================================
+     PLAN CARDS
+     ========================================================================== */
 .plan-card-container {
     display: flex;
     flex-direction: row;
@@ -292,7 +308,7 @@ img {
     margin: 0 auto;
 }
 
-/* Individual Card Styling */
+/*Individual Card Styling */
 .price-cards {
     background-color: var(--card-bg, #1e293b);
     border: 1px solid var(--border-color, #334155);
@@ -306,7 +322,7 @@ img {
     max-width: 33%;
 }
 
-/* Highlight the middle featured card (Growth) */
+/*Highlight the middle featured card (Growth) */
 .price-cards.featured {
     border-color: var(--featured-border, #0284c7);
     transform: scale(1.03);
@@ -326,7 +342,9 @@ img {
     transition: 0.2s ease-in-out;
 }
 
-/*Features Grid*/
+ /* ==========================================================================
+     FEATURES TABLE
+     ========================================================================== */
 /* Checkmark and Cross Icons using ::before pseudo-element */
 .features h2 {
     margin-left: 20px;
@@ -387,7 +405,9 @@ span.not-included::before {
 }
 
 
-/*FORM*/
+ /* ==========================================================================
+     FORM
+     ========================================================================== */
 .form {
     margin-top: 10px;
     margin-left: 20px;
@@ -443,6 +463,9 @@ input:focus {
     transition: 0.2s ease-in-out;
 }
 
+ /* ==========================================================================
+     FOOTER
+     ========================================================================== */
 footer {
     text-align: center;
     vertical-align: middle;
@@ -451,6 +474,10 @@ footer {
     padding: 0 0 5px 5px;
 }
 
+
+ /* ==========================================================================
+     MOBILE STYLING
+     ========================================================================== */
 @media screen and (max-width: 576px) {
     body {
         width: 98vw;

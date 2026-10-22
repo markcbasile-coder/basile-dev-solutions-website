@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name=" description *name of the page*" content="actual short description of the page for SEO">
+    <meta name="description" content="Custom Web Development & WaaS by Basile Dev Solutions.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WaaS Landing Page</title>
+    <title>Basile Dev Solutions</title>
     <link rel="stylesheet" href="./styles.css" />
 </head>
 
@@ -29,6 +29,7 @@
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#sign-up">Sign Up</a></li>
+                <li><a href="#the-process">How The Process Works</a></li>
             </ul>
         </nav>
     </header>
@@ -36,14 +37,26 @@
     <main>
         <!--hero section-->
         <section class="hero" id="hero">
-            <img src="../MBDS-Logo.png" id="hero-image" />
+            <img src="../BasileDevSolutions_Logo.jpeg" id="hero-image" />
             <div>
-            <h1>Mark Basile Dev Solutions</h1>
-            <p id="hero-text">Here at Mark Basile Dev Solutions, we supply WaaS (Website As A Service). I can assist you
-                with making a custom website for your business. We will meet, go over details, set up expectations and
-                timelines, go over what we will need from you to make your website as unique as your business, and set
-                up a next meeting time. Before you know it, you will have a one-of-a-kind website to proudly display to
-                your customers.</p>
+            <h1>Tailored Web Solutions — From Concept to Launch</h1>
+            <p id="hero-text">One-of-a-kind, mobile-responsive websites designed specifically to showcase your brand and convert visitors into
+            clients.</p>
+            <button>Schedule a Consultation</button>
+            </div>
+        </section>
+
+        <section class="about">
+            <div id="about-founder">
+                <img id="founder-headshot" />
+            </div>
+
+            <div id="the-process">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
             </div>
         </section>
 
@@ -53,10 +66,8 @@
                 <!--starter card-->
                 <div class="price-cards">
                     <p class="card-plan">Starter</p>
-                    <p>One-Time Build + Monthly Maintenance and Hosting Fee
-                    <p>
-                    <p class="price">TBD
-                    <p>
+                    <p>One-Time Build + Monthly Maintenance and Hosting Fee</p>
+                    <p class="price">TBD</p>
                 </div>
 
                 <!--growth card-->
@@ -172,7 +183,7 @@
             <p>For more information please contact us by submitting the form.</p>
             <form id="sign-up">
                 <fieldset class="personal-info">
-                    <legend>Peronal Information</legend>
+                    <legend>Personal Information</legend>
                     <label for="first-name">First Name: </label>
                     <input type="text" name="first-name" id="first-name" required />
 
@@ -185,13 +196,12 @@
                     <label for="email">Email: </label>
                     <input type="email" name="email" id="email" placeholder="example@domain.com" />
                     <label for="personal-tel">Phone Number: </label>
-                    <input type="tel" id="personal-tel" name="personal-tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                        placeholder:123-456-7890 />
+                    <input type="tel" id="personal-tel" name="personal-tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" />
                 </fieldset>
 
                 <fieldset class="business-info">
                     <legend>Business Information *Optional*</legend>
-                    <label for="bus-name">Busniess Name: </label>
+                    <label for="bus-name">Business Name: </label>
                     <input type="text" name="bus-name" id="bus-name" />
                     <p>Business Address</p>
                     <label for="street">Street Address: </label>
@@ -200,16 +210,15 @@
                     <label for="city">City: </label>
                     <input type="text" name="city" id="city" autocomplete="address-level2" />
                     <label for="state">State: </label>
-                    <input type="text" name="state" id="state" aucomplete="address-level1" />
+                    <input type="text" name="state" id="state" autocomplete="address-level1" />
                     <label for="zip">Zip Code: </label>
                     <input type="text" name="zip" id="zip" autocomplete="postal-code" inputmode="numeric" />
                     <label for="bus-tel">Business Telephone Number: </label>
-                    <input type="tel" id="bus-tel" name="bus-tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                        placeholder:123-456-7890 />
+                    <input type="tel" id="bus-tel" name="bus-tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" />
                 </fieldset>
 
                 <fieldset class="submit-container">
-                    <button type="submit" name="" submit id="submit">Submit</button>
+                    <button type="submit" id="submit">Submit</button>
                 </fieldset>
             </form>
         </section>
@@ -220,7 +229,7 @@
         <div class="footer-content">
             <p><strong>Mark Basile Dev Solutions</strong></p>
             <p>Custom Website-as-a-Service (WaaS) & Web Development Solutions.</p>
-            <p>&copy; 2026 Mark Basile Dev Solutions&trade;. All rights reserved.</p>
+            <p>&copy; 2026 Basile Dev Solutions&trade;. All rights reserved.</p>
         </div>
     </footer>
 </body>
