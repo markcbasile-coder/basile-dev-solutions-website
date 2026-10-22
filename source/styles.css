@@ -1,0 +1,470 @@
+:root {
+    /* ==========================================================================
+     GLOBAL PAGE & BODY STYLES
+     Target elements: body, main, html
+     ========================================================================== */
+    --bg-page: #0f172a;
+    /* Main site background (body) */
+    --text-main: #f8fafc;
+    /* Primary text color for h1, h2, p, labels */
+    --text-muted: #94a3b8;
+    /* #hero-text, subtext, input placeholders */
+    --border-color: #334155;
+    /* Borders for fieldsets, card dividers, header bottom */
+
+    /* ==========================================================================
+     HEADER & NAVIGATION
+     Target elements: header, nav, #nav, .navigation, .nav-links
+     ========================================================================== */
+    --nav-bg: #1e293bE6;
+    /* Background for fixed/sticky top nav bar */
+    --nav-link: #f8fafc;
+    /* Color for nav bar anchor links */
+    --nav-link-hover: #38bdf8;
+    /* Hover color for nav bar anchor links */
+
+    /* ==========================================================================
+     HERO SECTION
+     Target elements: section.hero, #hero, #hero-text, #hero-image
+     ========================================================================== */
+    --hero-bg: #1e293b80;
+    /* Background for hero section container */
+    --hero-title: #38bdf8;
+    /* Accent color for main h1 heading */
+
+    /* ==========================================================================
+     PRICING CARDS & FEATURE GRID
+     Target elements: .price-cards, .plan-card-container, .feature-grid, 
+                      #feature-items, .checklist, #starter, #growth, #bus-pro
+     ========================================================================== */
+    --card-bg: #1e293b;
+    /* Standard background for .price-cards & .feature-grid */
+    --card-title: #38bdf8;
+    /* Color for .card-plan and .chk-list-package text */
+    --card-price: #f8fafc;
+    /* Color for .price text ($699 + $49/month) */
+
+    /* FEATURED CARD HIGHLIGHTS */
+    /* Target elements: .price-cards.featured (Middle "Growth" card) */
+    --featured-card-bg: #1e293b;
+    /* Elevated background for featured pricing card */
+    --featured-border: #0284c7;
+    /* High-contrast border for featured card highlight */
+    --featured-accent: #38bdf8;
+    /* Accent badge or title highlight for featured card */
+
+    /* CHECKLIST STATES */
+    /* Target elements: li.included, li.not-included */
+    --icon-included: #22c55e;
+    /* Green checkmarks or text for .included list items */
+    --icon-not-included: #64748b;
+    /* Muted gray dashes/crosses for .not-included list items */
+
+    /* ==========================================================================
+     SIGN-UP FORM & INPUTS
+     Target elements: form#sign-up, fieldset, legend, input, label
+     ========================================================================== */
+    --form-bg: #1e293b;
+    /* Background for form#sign-up container */
+    --fieldset-bg: #0f172a;
+    /* Inner background for fieldsets */
+    --legend-color: #38bdf8;
+    /* Color for fieldset <legend> titles */
+    --input-bg: #0f172a;
+    /* Background for all text, tel, email inputs */
+    --input-text: #f8fafc;
+    /* Typed text color inside inputs */
+    --input-border: #334155;
+    /* Default border around input fields */
+    --input-focus-border: #38bdf8;
+    /* Border color when input is active/focused */
+
+    /* ==========================================================================
+     BUTTONS & CALLS TO ACTION
+     Target elements: .cta-btn, .btn, button, form submit button
+     ========================================================================== */
+    --btn-bg: #2563eb;
+    /* Default background for CTAs and submit buttons */
+    --btn-text: #ffffff;
+    /* Button text color */
+    --btn-border: #3b82f6;
+    /* Default button border */
+
+    /* HOVER & FOCUS STATES */
+    --btn-hover-bg: #1d4ed8;
+    /* Hover background for buttons */
+    --btn-hover-text: #ffffff;
+    /* Hover text color */
+    --btn-hover-border: #60a5fa;
+    /* Brightened border highlight on hover */
+
+    /* ==========================================================================
+     FOOTER
+     Target elements: footer, .footer-content
+     ========================================================================== */
+    --footer-bg: #0f172a;
+    /* Footer section background */
+    --footer-text: #94a3b8;
+    /* Copyright and description text color */
+}
+
+/* Enhanced Reset - Prevents layout overflow */
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    font-family: Helvetica, Arial, sans-serif;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    
+}
+
+body {
+    padding-top: 10vh;
+    background-color: var(--bg-page);
+    min-height: 100vh;
+    overflow: hide;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: var(--nav-bg);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
+}
+
+h1,
+h2,
+p,
+label {
+    color: var(--text-main);
+}
+
+#hero-text,
+input::placeholder {
+    color: var(--text-muted);
+}
+
+.plan-card-container,
+.features,
+.feature-grid {
+border: 2px solid Var(--border-color);
+}
+
+/*Navigation -  Hidden Nav*/
+/* 1. Hide the actual checkbox input completely */
+.nav-toggle {
+    display: none;
+}
+
+/* 2. Style the Hamburger Icon Button */
+.hamburger-btn {
+    pointer-events: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    z-index: 1001;
+    position: relative;
+}
+
+/* The 3 visible lines */
+.hamburger-btn span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-main);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* 3. Off-Canvas Mobile Navigation Setup */
+nav.navigation {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -280px;
+    width: 280px;
+    max-width: 80vw;
+    height: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    background-color: #1e2638;
+    padding: 80px 24px 30px;
+    transition: left 0.4s ease-in-out;
+    box-shadow: 5px 0 25px rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    box-sizing: border-box;
+    touch-action: pan-y;
+    overscroll-behavior: contain;
+    overflow-y: auto;
+}
+
+/* Link visibility & styling inside the drawer */
+nav.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+nav.navigation ul li a {
+    color: var(--nav-link);
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: block;
+    padding: 8px 0;
+}
+
+nav.navigation a {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: block;
+    transition: opacity 0.2s;
+}
+
+/* Slide active drawer in - Open State */
+.nav-toggle:checked~nav.navigation {
+    left: 0;
+}
+
+nav.navigation ul li a:hover {
+    color: var(--nav-link-hover);
+}
+
+nav.navigation a:hover {
+    opacity: 0.8;
+}
+/*End Nav Bar*/
+
+
+/*list styling*/
+ul {
+    list-style: none;
+}
+
+/* =============================
+Hero Section
+================================ */
+.hero {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 2px auto;
+    width: 85%;
+    max-width: 1150px;
+}
+img {
+    width: 40%;
+    max-width: 500px;
+    margin: 2px auto;
+    z-index: -1;
+}
+
+
+
+/*Plan Cards*/
+.plan-card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+/* Individual Card Styling */
+.price-cards {
+    background-color: var(--card-bg, #1e293b);
+    border: 1px solid var(--border-color, #334155);
+    border-radius: 8px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    transition: 0.2s ease-in-out;
+    min-width: 125px;
+    max-width: 33%;
+}
+
+/* Highlight the middle featured card (Growth) */
+.price-cards.featured {
+    border-color: var(--featured-border, #0284c7);
+    transform: scale(1.03);
+    transition: 0.2s ease-in-out;
+    /* Slightly elevates the middle card */
+}
+
+.price-cards:hover {
+    transform: scale(1.01);
+    box-shadow: 1px 1px 8px 1px whitesmoke;
+    transition: 0.2s ease-in-out;
+}
+
+.price-cards.featured:hover {
+    transform: scale(1.04);
+    box-shadow: 1px 1px 8px 1px gold;
+    transition: 0.2s ease-in-out;
+}
+
+/*Features Grid*/
+/* Checkmark and Cross Icons using ::before pseudo-element */
+.features h2 {
+    margin-left: 20px;
+}
+
+span.included::before {
+    content: "✔";
+    color: #22c55e;
+    font-weight: bold;
+}
+
+span.not-included::before {
+    content: "✖";
+    color: #ef4444;
+    font-size: 0.9em;
+}
+
+.table-wrapper {
+    overflow-x: hide;
+    border-radius: 8px;
+    border: 1px solid #334155;
+}
+
+.comparison-table {
+    margin: auto auto 10px auto;;
+    width: 97%;
+    border-collapse: collapse;
+    background-color: #1e293b;
+    text-align: center;
+}
+
+.comparison-table thead th {
+    background-color: #0f172a;
+    color: #ffffff;
+    padding: 16px;
+    font-size: 1rem;
+    border-bottom: 2px solid #334155;
+}
+
+.comparison-table th.feature-col {
+    text-align: left;
+    width: 40%;
+}
+
+.comparison-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #334155;
+}
+
+.comparison-table td.feature-name {
+    color: var(--text-muted);
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.comparison-table tbody tr:nth-child(even) {
+    background-color: #172033;
+}
+
+
+/*FORM*/
+.form {
+    margin-top: 10px;
+    margin-left: 20px;
+    font-size: 20px;
+}
+legend {
+    color: var(--legend-color);
+}
+
+fieldset {
+    border: none;
+    margin: 15px auto;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+input {
+    font-size: 1.05rem;
+    background-color: Var(--input-bg);
+    color: var(--input-text);
+    border: 1px solid var(--input-border);
+    margin: 5px 0 5px 0;
+    padding: 15px;
+    height: 20px;
+    width: 33%;
+}
+
+input:focus {
+    border: 1px solid var(--input-focus-border);
+}
+
+#submit {
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: 1px solid var(btn-border);
+    border-radius: 3px;
+    transition: 0.2s ease-in-out;
+    font-size: 1.1rem;
+    height: 35px;
+    min-width: 25%;
+    max-width: 33%;
+}
+
+#submit:hover {
+    transform: scale(1.02);
+    transform: translate(-1px, -1px);
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: 1px solid var(btn-border);
+    border-radius: 3px;
+    box-shadow: 1px 1px 8px 1px whitesmoke;
+    transition: 0.2s ease-in-out;
+}
+
+footer {
+    text-align: center;
+    vertical-align: middle;
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    padding: 0 0 5px 5px;
+}
+
+@media screen and (max-width: 576px) {
+    body {
+        width: 98vw;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    fieldset {
+        width: 100%;
+    }
+
+    img {
+        min-width: 200px;
+    }
+}
