@@ -318,8 +318,8 @@ input::placeholder {
     flex-direction: column;
     justify-content: space-evenly;
     transition: 0.2s ease-in-out;
-    min-width: 125px;
-    max-width: 33%;
+    min-width: 150px;
+    max-width: 250px;
 }
 
 /*Highlight the middle featured card (Growth) */
