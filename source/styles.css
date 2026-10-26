@@ -134,7 +134,6 @@ html {
 body {
     background-color: var(--bg-page);
     min-height: 100vh;
-    overflow: hide;
 }
 
 main {
@@ -288,6 +287,40 @@ input::placeholder {
 }
 
 
+ /* ==========================================================================
+     ABOUT SECTION
+     ========================================================================== */
+
+.about{
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-evenly;
+    align-items:center;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+#about-founder p{
+    margin: 10px auto;
+}
+
+#founder-headshot{
+    height: 300px;
+    border-radius:50%;
+}
+
+.about h2{
+    margin-bottom: 10px;
+}
+
+.about ul li{
+    color: var(--text-muted);
+    margin: 5px;
+    list-style: circle;
+}
+
+
+
 
  /* ==========================================================================
      PLAN CARDS
@@ -299,13 +332,13 @@ input::placeholder {
     justify-content: space-evenly;
     gap: 20px;
     padding: 20px;
-    margin: 0 auto;
+    margin: 0 auto 35px;
 }
 
 .plan-card-container,
 .features,
 .feature-grid {
-    border: 2px solid Var(--border-color);
+    width: 98%;
 }
 
 /*Individual Card Styling */
@@ -360,12 +393,6 @@ span.not-included::before {
     content: "✖";
     color: #ef4444;
     font-size: 0.9em;
-}
-
-.table-wrapper {
-    overflow-x: hide;
-    border-radius: 8px;
-    border: 1px solid #334155;
 }
 
 .comparison-table {
@@ -457,7 +484,7 @@ input:focus {
     transform: translate(-1px, -1px);
     background-color: var(--btn-bg);
     color: var(--btn-text);
-    border: 1px solid var(btn-border);
+    border: 1px solid var(--btn-border);
     border-radius: 3px;
     box-shadow: 1px 1px 8px 1px whitesmoke;
     transition: 0.2s ease-in-out;
@@ -512,7 +539,6 @@ footer {
     }
 
     .table-wrapper {
-        table-layout: fixed;
         border-radius: 8px;
         border: 1px solid #334155;
     }
@@ -530,6 +556,7 @@ footer {
     }
 
     .comparison-table {
+        table-layout: fixed;
         margin: auto auto 10px auto;
         width: 90vw;
         border-collapse: collapse;
