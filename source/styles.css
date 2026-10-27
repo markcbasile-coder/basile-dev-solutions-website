@@ -405,27 +405,30 @@ input::placeholder {
 }
 
  /* ==========================================================================
-     FEATURES TABLE
-     ========================================================================== */
-/* Checkmark and Cross Icons using ::before pseudo-element */
+   FEATURES TABLE
+   ========================================================================== */
 .features h2 {
     margin-left: 20px;
 }
 
-span.included::before {
-    content: "✔";
-    color: #22c55e;
-    font-weight: bold;
+/* SVG Icon Styling */
+.icon-included,
+.icon-not-included {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
 }
 
-span.not-included::before {
-    content: "✖";
+.icon-included {
+    color: #22c55e;
+}
+
+.icon-not-included {
     color: #ef4444;
-    font-size: 0.9em;
 }
 
 .comparison-table {
-    margin: auto auto 10px auto;;
+    margin: auto auto 10px auto;
     width: 97%;
     border-collapse: collapse;
     background-color: #1e293b;
@@ -459,7 +462,6 @@ span.not-included::before {
 .comparison-table tbody tr:nth-child(even) {
     background-color: #172033;
 }
-
 
  /* ==========================================================================
      CONTACT BUTTON
